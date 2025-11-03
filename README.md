@@ -26,19 +26,19 @@ solar_energy/
 │
 ├── data/
 │   ├── Plant_1_Generation_Data.csv
-│   ├── Plant_1_Weather_Sensor_Data.csv
+│   └── Plant_1_Weather_Sensor_Data.csv
 │
 ├── notebooks/
 │   └── Solar_Power_Prediction.ipynb
 │
 ├── models/
 │   ├── dc_rf_model.pkl
-│   ├── ac_rf_model.pkl
+│   └── ac_rf_model.pkl
 │
 ├── results/
 │   ├── feature_importances.png
 │   ├── predictions_vs_actual_dc.png
-│   ├── predictions_vs_actual_ac.png
+│   └── predictions_vs_actual_ac.png
 │
 ├── analysis/
 │   └── model_comparison.md
