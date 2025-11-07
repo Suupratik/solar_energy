@@ -1,6 +1,6 @@
 # ☀️ **Solar Energy Prediction Dashboard**
 
-### 🧠 *AICTE–Shell Skills4Future Internship (Energy Theme)*
+### *AICTE–Shell Skills4Future Internship (Energy Theme)*
 
 **Intern Name:** Supratik Mitra
 **Project Folder:** `solar_energy`
@@ -104,7 +104,7 @@ solar_energy/
 ✅ *Both models achieved above 99% accuracy, indicating excellent fit.*
 
 ------
-
+## Solar Energy Dashboard (Streamlit App)
 ## 🖥️ **Streamlit Dashboard**
 
 The dashboard provides:
