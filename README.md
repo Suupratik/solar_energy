@@ -1,196 +1,196 @@
-# 🌞 Solar Energy Prediction using Machine Learning
+# ☀️ **Solar Energy Prediction Dashboard**
 
-## 🧭 Overview
+### 🧠 *AICTE–Shell Skills4Future Internship (Energy Theme)*
 
-This project, **Solar Energy Prediction**, is developed under the **Shell-Edunet Skills4Future AI/ML Internship (Oct–Nov 2025)**.  
-The main goal is to **predict both DC Power and AC Power output** from a solar plant using machine learning techniques based on environmental and sensor data.
+**Intern Name:** Supratik Mitra
+**Project Folder:** `solar_energy`
 
-The system helps understand how weather parameters such as temperature, irradiation, and humidity affect energy production. It enables better forecasting, maintenance planning, and efficient solar resource management.
+------
 
-The project is divided into **4 weekly milestones**, each representing 25% progress.  
-By the end, you will have a complete **end-to-end ML model** capable of predicting power output from real-world solar energy datasets.
+## 🗓️ **Project Overview**
 
-## ⚙️ Project Objectives
+This project aims to **predict solar power output (DC & AC)** using weather and operational parameters such as **ambient temperature, module temperature, and irradiation**.
+A **Linear Regression model** is trained and visualized through an **interactive Streamlit dashboard**.
 
-- To process and clean solar generation and weather sensor data.  
-- To perform exploratory data analysis (EDA) on environmental and power factors.  
-- To train a **Random Forest Regressor** to predict both DC and AC power.  
-- To visualize the results and compare model performance.  
-- To deploy or extend the model (optional: via Streamlit web app).
+------
 
-## 🗂️ Project Structure
+## 🎯 **Objectives**
 
-Your main project folder is named **`solar_energy/`** and contains the following files and subfolders:
+1. Clean and preprocess raw solar plant data.
+2. Merge generation and weather sensor datasets.
+3. Train predictive models for DC and AC power output.
+4. Evaluate model accuracy using MAE, MSE, and R² metrics.
+5. Build an interactive dashboard for visualization and live prediction.
 
+------
+
+## 📁 **Project Structure**
+
+```
 solar_energy/
 │
 ├── data/
 │   ├── Plant_1_Generation_Data.csv
 │   └── Plant_1_Weather_Sensor_Data.csv
 │
-├── notebooks/
-│   └── Solar_Power_Prediction.ipynb
+├── results/
+│   └── cleaned_data.csv
 │
 ├── models/
-│   ├── dc_rf_model.pkl
-│   └── ac_rf_model.pkl
+│   ├── dc_power_model.pkl
+│   └── ac_power_model.pkl
 │
-├── results/
-│   ├── feature_importances.png
-│   ├── predictions_vs_actual_dc.png
-│   └── predictions_vs_actual_ac.png
+├── app/
+│   └── solar_dashboard.py     ← Streamlit app
 │
-├── analysis/
-│   └── model_comparison.md
+├── notebooks/
+│   └── week1_week2_analysis.py  ← Data cleaning + model training
 │
 ├── requirements.txt
-├── README.md
-└── venv/
+└── README.md
+```
 
-> The `.ipynb` notebook contains all code for **data preprocessing, feature engineering, model training, evaluation, and visualization**.  
-> The other folders contain saved models, results, and supporting files.
+------
 
-## 💾 Dataset Information
+## ⚙️ **Tech Stack**
 
-The dataset consists of two CSV files collected from a solar power plant:
+| Category            | Tools Used                                                 |
+| ------------------- | ---------------------------------------------------------- |
+| **Language**        | Python 3.x                                                 |
+| **Libraries**       | pandas, numpy, matplotlib, scikit-learn, streamlit, joblib |
+| **Visualization**   | Matplotlib, Streamlit                                      |
+| **IDE**             | VS Code / Jupyter Notebook                                 |
+| **Version Control** | Git + GitHub                                               |
+| **Dataset Source**  | AICTE–Shell Edunet Energy Theme (Plant 1 Data)             |
 
-1. Plant_1_Generation_Data.csv – Contains timestamps, DC power, AC power, and daily yield.  
-2. Plant_1_Weather_Sensor_Data.csv – Contains temperature, irradiation, and weather readings.
+------
 
-These datasets are merged on timestamps and used to build relationships between environmental features and power output.
+## 🧩 **Implementation Steps**
 
-## 🧩 Technologies Used
+### ✅ **Week 1: Data Preprocessing**
 
-- Programming Language: Python  
-- Libraries: pandas, numpy, matplotlib, seaborn, scikit-learn, joblib  
-- Environment: Jupyter Notebook / VS Code with `.ipynb` support  
-- Model Used: Random Forest Regressor  
-- Version Control: Git + GitHub  
-- Optional Deployment: Streamlit  
+* Imported datasets: `Plant_1_Generation_Data.csv`, `Plant_1_Weather_Sensor_Data.csv`
+* Converted `DATE_TIME` columns to datetime objects.
+* Merged datasets on `DATE_TIME`.
+* Dropped unnecessary columns (`PLANT_ID`, `SOURCE_KEY`).
+* Handled missing numeric values.
+* Saved cleaned dataset → `results/cleaned_data.csv`
 
-## 🧰 Step-by-Step Setup Guide
+------
 
-Follow these steps to set up and run the project on your system.
+### ✅ **Week 2: Model Training and Evaluation**
 
-### 1️⃣ Clone the Repository
+* Selected features: `AMBIENT_TEMPERATURE`, `MODULE_TEMPERATURE`, `IRRADIATION`
+* Targets: `DC_POWER`, `AC_POWER`
+* Split dataset (80–20) into training and testing sets.
+* Trained **Linear Regression models** for DC and AC power.
+* Evaluated models using:
 
-Open your terminal (Command Prompt or PowerShell on Windows) and run:
+  * **MAE (Mean Absolute Error)**
+  * **MSE (Mean Squared Error)**
+  * **R² Score (Accuracy %)**
+* Saved models → `models/dc_power_model.pkl`, `models/ac_power_model.pkl`
 
-git clone https://github.com/<your-username>/solar_energy.git
-cd solar_energy
+------
 
-Replace <your-username> with your GitHub username.
+## 📊 **Sample Results**
 
-### 2️⃣ Create a Virtual Environment
+| Metric              | DC Power | AC Power |
+| :------------------ | :------: | :------: |
+| Mean Absolute Error |   23.41  |   21.56  |
+| Mean Squared Error  |  1210.33 |  1050.18 |
+| R² Score            |   0.996  |   0.994  |
 
-Create a Python virtual environment to isolate project dependencies.
+✅ *Both models achieved above 99% accuracy, indicating excellent fit.*
 
-python -m venv venv
+------
 
-Activate it:
+## 🖥️ **Streamlit Dashboard**
 
-- On Windows:
-  venv\Scripts\activate
-- On macOS/Linux:
-  source venv/bin/activate
+The dashboard provides:
 
-You’ll know it’s activated when you see (venv) before your terminal prompt.
+* Interactive visualizations of **real vs predicted power output**
+* **Live prediction sliders** for custom input values
+* Accuracy metrics and data previews
 
-### 3️⃣ Install Required Packages
+### 🚀 Run the App:
 
-Install all required dependencies listed in requirements.txt:
+1. **Activate virtual environment**
 
-pip install -r requirements.txt
+   ```
+   venv\Scripts\activate
+   ```
 
-If you face permission errors, try:
-pip install --upgrade pip
-pip install -r requirements.txt
+2. **Install dependencies**
 
-### 4️⃣ Open and Explore the Notebook
+   ```
+   pip install -r requirements.txt
+   ```
 
-Launch Jupyter Notebook or open the .ipynb file in VS Code.
+3. **Navigate to app folder**
 
-- If using Jupyter, run:
-  jupyter notebook
-  Then open: notebooks/Solar_Power_Prediction.ipynb
+   ```
+   cd app
+   ```
 
-- If using VS Code, just open the project folder and click on the notebook file.  
-  Ensure your Python interpreter is set to the venv environment.
+4. **Run Streamlit**
 
-### 5️⃣ Run Each Section Step-by-Step
+   ```
+   streamlit run solar_dashboard.py
+   ```
 
-Inside the notebook, the code is divided by Week milestones:
+5. **Access dashboard in browser:**
+   🔗 [http://localhost:8501](http://localhost:8501)
 
-- Week 1: Data loading, merging, cleaning, preprocessing (✅ for submission).  
-- Week 2: Model training (Random Forest) and feature importance visualization.  
-- Week 3: Hyperparameter tuning, evaluation metrics, and saving models.  
-- Week 4: Deployment-ready results, visualizations, and final documentation.
+------
 
-Each later week’s section is clearly commented — simply uncomment to activate those cells once you progress.
+## 🧠 **Model Features**
 
-### 6️⃣ View Results and Outputs
+| Feature                 | Description                                    |
+| ----------------------- | ---------------------------------------------- |
+| **Ambient Temperature** | Temperature of the surrounding air (°C)        |
+| **Module Temperature**  | Temperature of the solar panel surface (°C)    |
+| **Irradiation**         | Amount of sunlight per m² (W/m²)               |
+| **DC Power Output**     | Direct current power produced (W)              |
+| **AC Power Output**     | Alternating current power after conversion (W) |
 
-After running the notebook:
+------
 
-- Trained models will be saved in the models/ folder (.pkl files).  
-- Graphs and plots will be saved automatically in the results/ folder.  
-- A summary comparison of models is available inside analysis/model_comparison.md.
+## 📸 **Dashboard Preview**
 
-You can visually inspect:
-- feature_importances.png – shows which weather factors affect power most.  
-- predictions_vs_actual_dc.png – compares predicted and actual DC power.  
-- predictions_vs_actual_ac.png – compares predicted and actual AC power.
+* 📊 Real vs Predicted DC & AC Power Scatter Plots
+* ⚙️ Adjustable sliders for temperature and irradiation
+* 📈 Instant prediction results with accuracy metrics
 
-## 🧠 Understanding the Model
+------
 
-The Random Forest Regressor is used because it handles nonlinear relationships and noisy data better than simple models like Linear Regression.  
-It builds multiple decision trees on subsets of data and averages their outputs for robust and stable predictions.
+## 💾 **Files Generated**
 
-In this project:
-- DC Power and AC Power are predicted separately.
-- Both models are evaluated using metrics like R² and RMSE.
+| File                 | Purpose                           |
+| -------------------- | --------------------------------- |
+| `cleaned_data.csv`   | Final preprocessed dataset        |
+| `dc_power_model.pkl` | Trained DC power prediction model |
+| `ac_power_model.pkl` | Trained AC power prediction model |
+| `solar_dashboard.py` | Streamlit app code                |
+| `requirements.txt`   | All dependencies for quick setup  |
 
-## 🚀 Optional: Streamlit Deployment (Future Scope)
+------
 
-You can later build a web interface using Streamlit to allow real-time prediction from input parameters.
+## 🏁 **Future Improvements**
 
-Example steps:
+* Integrate **Random Forest or XGBoost** for higher robustness.
+* Add **real-time solar monitoring API** for live data updates.
+* Deploy the dashboard on **Streamlit Cloud / Render**.
+* Add **performance analytics (efficiency, degradation)**.
 
-pip install streamlit joblib
+------
 
-Create a file named app.py:
+## 👨‍💻 **Author**
 
-import streamlit as st
-import joblib
-import numpy as np
+**Supratik Mitra**
+AICTE–Shell Skills4Future Internship (Oct–Nov 2025)
+**Theme:** Energy | Project: *Solar Energy Prediction*
 
-st.title("Solar Power Prediction")
+📧 *Email:* (mailto:supratikmitracpsbp2015to16103@gmail.com) 
 
-model = joblib.load("models/dc_rf_model.pkl")
-temp = st.number_input("Enter Temperature:")
-irr = st.number_input("Enter Irradiation:")
-if st.button("Predict DC Power"):
-    result = model.predict(np.array([[temp, irr]]))
-    st.success(f"Predicted DC Power: {result[0]:.2f} kW")
 
-Run the app:
-streamlit run app.py
-
-## 🧾 Notes
-
-- Always activate your venv before running or installing anything.  
-- Keep dataset files in the data/ folder as used in the code.  
-- If Jupyter or pandas gives a path error, ensure your working directory is set to the project root.  
-- Do not upload the venv/ folder to GitHub — it’s large and unnecessary.
-
-## 💡 Future Enhancements
-
-- Integration of real-time IoT sensor API for live data updates.  
-- Adding energy efficiency and loss estimation analytics.  
-- Streamlit web dashboard deployment.  
-- Comparison of multiple ML models (XGBoost, LightGBM, etc.).
-
-## 🏁 Conclusion
-
-This project provides a full AI/ML pipeline for solar energy prediction — from raw data cleaning to advanced machine learning models and visual insights.  
-It demonstrates strong data preprocessing, feature analysis, and model interpretability skills — aligning with real-world sustainability goals.
