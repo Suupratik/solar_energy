@@ -29,25 +29,33 @@ A **Linear Regression model** is trained and visualized through an **interactive
 ```
 solar_energy/
 │
-├── data/
-│   ├── Plant_1_Generation_Data.csv
-│   └── Plant_1_Weather_Sensor_Data.csv
+├─ analysis/
+│ └─ analysis.md # Detailed analysis and observations
 │
-├── results/
-│   └── cleaned_data.csv
+├─ app/
+│ └─ solar_dashboard.py # Streamlit/Dashboard app for visualization
 │
-├── models/
-│   ├── dc_power_model.pkl
-│   └── ac_power_model.pkl
+├─ data/
+│ ├─ Plant_1_Generation_Data.csv # Historical solar generation data
+│ └─ Plant_1_Weather_Sensor_Data.csv # Weather sensor data
 │
-├── app/
-│   └── solar_dashboard.py     ← Streamlit app
+├─ models/
+│ ├─ ac_power_model.pkl # Trained AC power prediction model
+│ └─ dc_power_model.pkl # Trained DC power prediction model
 │
-├── notebooks/
-│   └── week1_week2_analysis.py  ← Data cleaning + model training
+├─ notebooks/
+│ └─ Solar_Power_Prediction.ipynb # Jupyter notebook for analysis and modeling
 │
-├── requirements.txt
-└── README.md
+├─ results/
+│ ├─ cleaned_data.csv # Preprocessed/cleaned dataset
+│ ├─ predictions_vs_actual_ac.png # AC power prediction vs actual plot
+│ └─ predictions_vs_actual_dc.png # DC power prediction vs actual plot
+│
+├─ venv/ # Python virtual environment
+│
+├─ .gitignore # Files to ignore in git
+├─ README.md # Project documentation
+└─ requirements.txt # Required Python packages
 ```
 
 ------
