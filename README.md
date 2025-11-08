@@ -1,4 +1,4 @@
-# ☀️ **Solar Energy Prediction Dashboard**
+# ☀️ **Solar Energy Power Prediction**
 
 ### *AICTE–Shell Skills4Future Internship (Energy Theme)*
 

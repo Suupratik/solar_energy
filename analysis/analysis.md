@@ -1,4 +1,4 @@
-# 🌞# Model Analysis — Solar Energy Prediction
+# 🌞# Model Analysis — Solar Energy Power Prediction
 
 This notebook presents the final model evaluation for the solar energy forecasting project. 
 The analysis focuses on Linear Regression as the chosen predictive model to estimate DC and AC Power outputs.
