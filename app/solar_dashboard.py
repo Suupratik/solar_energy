@@ -131,5 +131,5 @@ st.info(f"**Predicted AC Power:** {ac_pred:.2f} W")
 # -----------------------------
 # FOOTER
 # -----------------------------
-st.markdown("---")
+st.markdown("------")
 st.caption("Developed by Supratik Mitra | AICTE–Shell Skills4Future Internship – Energy Theme")
