@@ -112,7 +112,7 @@ solar_energy/
 ✅ *Both models achieved above 99% accuracy, indicating excellent fit.*
 
 ------
-## Solar Energy Dashboard (Streamlit App)
+## Final Week: Solar Energy Dashboard (Streamlit App)
 ## 🖥️ **Streamlit Dashboard**
 
 The dashboard provides:
