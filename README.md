@@ -196,8 +196,8 @@ The dashboard provides:
 ## 👨‍💻 **Author**
 
 **Supratik Mitra**
-AICTE–Shell Skills4Future Internship (Oct–Nov 2025)
-**Theme:** Energy | Project: *Solar Energy Prediction*
+- AICTE–Shell Skills4Future Internship (Oct–Nov 2025)
+- **Theme:** Energy | Project: *Solar Energy Prediction*
 
 📧 *Email:* (mailto:supratikmitracpsbp2015to16103@gmail.com) 
 
