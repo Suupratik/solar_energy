@@ -10,7 +10,7 @@
 ## 🗓️ **Project Overview**
 
 This project aims to **predict solar power output (DC & AC)** using weather and operational parameters such as **ambient temperature, module temperature, and irradiation**.
-A **Linear Regression model** is trained and visualized through an **interactive Streamlit dashboard**.
+A **Linear Regression model** is trained and visualized through an: **interactive Streamlit dashboard**.
 
 ------
 
